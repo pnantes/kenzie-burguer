@@ -1,4 +1,5 @@
 import ProductsCart from "../ProductCart";
+import "./style.css";
 
 const Cart = ({ currentSale, removeItem, removeAll }) => {
   console.log(currentSale);
@@ -7,10 +8,10 @@ const Cart = ({ currentSale, removeItem, removeAll }) => {
   }, 0);
   return (
     <aside>
-      <div>
+      <div className="titulo">
         <h2>Carrinho de compras</h2>
       </div>
-      <div>
+      <div className="sacola">
         <ProductsCart
           currentSale={currentSale}
           total={total}

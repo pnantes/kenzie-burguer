@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./style.css";
 
 const Header = ({ products, filteredProducts, setFilteredProducts }) => {
   const [currentSearch, setCurrentSearch] = useState("");
@@ -15,23 +16,27 @@ const Header = ({ products, filteredProducts, setFilteredProducts }) => {
   }
 
   return (
-    <div>
-      <div>
-        <span>Burguer</span>
-        <span>KENZIE</span>
-      </div>
+    <header className="header">
+      <div className="container-header">
+        <div>
+          <h1>
+            Burguer
+            <span>KENZIE</span>
+          </h1>
+        </div>
 
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder="Digitar Pesquisa"
-          onChange={(event) =>
-            setCurrentSearch(event.target.value.toLowerCase())
-          }
-        />
-        <button type="submit">Pesquisar</button>
-      </form>
-    </div>
+        <form className="pesquisa" onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="Digitar Pesquisa"
+            onChange={(event) =>
+              setCurrentSearch(event.target.value.toLowerCase())
+            }
+          />
+          <button type="submit">Pesquisar</button>
+        </form>
+      </div>
+    </header>
   );
 };
 

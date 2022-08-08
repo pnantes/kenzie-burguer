@@ -1,1 +1,38 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    button{
+        cursor: pointer;
+        border: 0;
+        background: transparent;
+    }
+    ul, ol, li{
+        list-style: none;
+    }
+    
+    img{
+        max-width: 100%;
+    }
+    section, aside, div{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    body{
+        background: #FFFFFF;
+    }
+`;
+
+// export const Container = styled.div`
+//   max-width: 1300px;
+//   width: 100%;
+//   margin: 0 auto;
+//   padding: 1.5rem 1rem;
+// `;

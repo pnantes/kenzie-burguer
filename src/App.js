@@ -1,9 +1,9 @@
-import "./App.css";
 import ProductList from "./components/ProductsList";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import api from "./services/api";
 import Cart from "./components/Cart";
+import "./App.css";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -42,21 +42,23 @@ function App() {
   }
 
   return (
-    <main>
+    <div className="App">
       <Header
         products={products}
         filteredProducts={filteredProducts}
         setFilteredProducts={setFilteredProducts}
       />
-      <ul>
-        <ProductList products={filteredProducts} handleClick={handleClick} />
-      </ul>
-      <Cart
-        currentSale={currentSale}
-        removeItem={removeItem}
-        removeAll={removeAll}
-      />
-    </main>
+      <main className="container">
+        <ul className="ul-product">
+          <ProductList products={filteredProducts} handleClick={handleClick} />
+        </ul>
+        <Cart
+          currentSale={currentSale}
+          removeItem={removeItem}
+          removeAll={removeAll}
+        />
+      </main>
+    </div>
   );
 }
 

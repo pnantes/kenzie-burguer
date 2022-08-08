@@ -1,14 +1,15 @@
+import "./style.css";
 const Product = ({ product, handleClick }) => {
   const { id, name, category, price, img } = product;
 
   return (
-    <li>
-      <div>
+    <li className="li">
+      <div className="div-figure">
         <figure>
           <img src={img} alt={name} />
         </figure>
       </div>
-      <div>
+      <div className="div-produto">
         <h2>{name}</h2>
         <span>{category}</span>
         <p>
